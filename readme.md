@@ -24,7 +24,8 @@ _I ran this off the CLI using `rails g migration add_category_to_street_cafe cat
 
 _Query used: (I had never used a self joins before but found that to be the easiest way to run a select name query through the S2 table while keeping the post_code as the constant between S1 and S2)_
 ```
-    SELECT post_code, 
+CREATE VIEW post_code_cafe_data AS
+SELECT post_code, 
 	COUNT(post_code) AS total_places, 
 	SUM(chairs) AS total_chairs, 
 	ROUND(SUM(chairs) * 100 / SUM(SUM(chairs)) OVER(), 2) AS chairs_pct, 
