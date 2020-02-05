@@ -6,7 +6,11 @@
 
 2) Download the data file from: https://github.com/gospotcheck/ps-code-challenge/blob/master/Street%20Cafes%202015-16.csv
 
+_To complete this, I created a RakeTask that took all data present in the CSV and created a StreetCafe model that was inserted into the database_
+
 3) Add a varchar column to the table called `category`. 
+
+_I ran this off the CLI using `rails g migration add_category_to_street_cafe category:varchar`_
 
 4) Create a view with the following columns[provide the view SQL]
     - post_code: The Post Code
