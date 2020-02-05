@@ -6,7 +6,7 @@
 
 2) Download the data file from: https://github.com/gospotcheck/ps-code-challenge/blob/master/Street%20Cafes%202015-16.csv
 
-_To complete this, I created a RakeTask that took all data present in the CSV and created a StreetCafe model that was inserted into the database. Today I Learned: Rails pluralization somehow pluralizes cafe => caves, so I had to also redefine the correct inflection in config/initializers/inflections.rb_
+_To complete this, I created a RakeTask that took all data present in the CSV and created a StreetCafe model that was inserted into the database. Today I Learned: Rails pluralizes cafe => caves, so I had to also redefine the correct inflection in config/initializers/inflections.rb_
 
 3) Add a varchar column to the table called `category`. 
 
