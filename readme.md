@@ -22,6 +22,18 @@ _I ran this off the CLI using `rails g migration add_category_to_street_cafe cat
 	
     *Please also include a brief description of how you verified #4*
 
+_Query used:_
+```
+    SELECT post_code, 
+	COUNT(post_code) AS total_places, 
+	SUM(chairs) AS total_chairs, 
+	ROUND(SUM(chairs) * 100 / SUM(SUM(chairs)) OVER(), 2) AS chairs_pct, 
+	(SELECT S2.name FROM street_cafes S2 WHERE S1.post_code = S2.post_code ORDER BY S2.chairs DESC LIMIT(1)) AS place_with_max_chairs, 
+	MAX(chairs) AS max_chairs 
+	FROM street_cafes S1 
+	GROUP BY post_code;
+```
+
 5) Write a Rails script to categorize the cafes and write the result to the category according to the rules:[provide the script]
     - If the Post Code is of the LS1 prefix type:
         - `# of chairs less than 10: category = 'ls1 small'`
