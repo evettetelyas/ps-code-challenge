@@ -22,7 +22,7 @@ _I ran this off the CLI using `rails g migration add_category_to_street_cafe cat
 	
     *Please also include a brief description of how you verified #4*
 
-_Query used:_
+_Query used: (I had never used a self joins before but found that to be the easiest way to run a select name query through the S2 table while keeping the post_code as the constant between S1 and S2)_
 ```
     SELECT post_code, 
 	COUNT(post_code) AS total_places, 
