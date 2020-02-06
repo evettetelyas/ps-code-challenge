@@ -19,8 +19,6 @@ _I ran this off the CLI using `rails g migration add_category_to_street_cafe cat
     - chairs_pct: Out of all the chairs at all the Post Codes, what percentage does this Post Code represent (should sum to 100% in the whole view)
     - place_with_max_chairs: The name of the place with the most chairs in that Post Code
     -max_chairs: The number of chairs at the place_with_max_chairs
-	
-    *Please also include a brief description of how you verified #4*
 
 _Query used: (I had never used a self joins before but found that to be the easiest way to run a select name query through the S2 table while keeping the post_code as the constant between S1 and S2)_
 ```
@@ -34,6 +32,10 @@ SELECT post_code,
 	FROM street_cafes S1 
 	GROUP BY post_code;
 ```
+ 
+   *Please also include a brief description of how you verified #4*
+   
+_I decided to create a test_data.csv with 10 rows of dummy data. This is imported to the `ps-code-challenge_test` database using a similar raketask by running `RAILS_ENV=test rake import_test_data` on the CLI. I am then able to manually check my calculations with a really small set of data_ 
 
 5) Write a Rails script to categorize the cafes and write the result to the category according to the rules:[provide the script]
     - If the Post Code is of the LS1 prefix type:
