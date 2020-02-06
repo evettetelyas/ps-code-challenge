@@ -52,7 +52,7 @@ _I decided to create a test_data.csv with 10 rows of dummy data. This is importe
 
     *Please share any tests you wrote for #5*
     
-    _test file is included in `spec/tasks/assign_categories_spec.rb`_
+    _My test file is included in `spec/tasks/assign_categories_spec.rb` I used RSpec to test this rake task._
 
 6) Write a custom view to aggregate the categories [provide view SQL AND the results of this view]
     - category: The category column
