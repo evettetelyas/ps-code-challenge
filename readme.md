@@ -62,7 +62,7 @@ _I decided to create a test_data.csv with 10 rows of dummy data. This is importe
     SQL Query:
 ```
     CREATE VIEW category_cafe_data AS
-SELECT category, 
+		SELECT category, 
 		COUNT(category) AS total_places, 
 		SUM(chairs) AS total_chairs 
 		FROM street_cafes 
