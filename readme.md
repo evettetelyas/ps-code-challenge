@@ -35,7 +35,9 @@ SELECT post_code,
  
    *Please also include a brief description of how you verified #4*
    
-_I decided to create a test_data.csv with 10 rows of dummy data. This is imported to the `ps-code-challenge_test` database using a similar raketask by running `RAILS_ENV=test rake import_test_data` on the CLI. I am then able to manually check my calculations with a really small set of data_ 
+_I decided to create a test_data.csv with 10 rows of dummy data. This is imported to the `ps-code-challenge_test` database using a similar raketask by running `RAILS_ENV=test rake import_test_data` on the CLI. I am then able to manually check my calculations with a really small set of data which I have included below:_ 
+
+![test_data_sql](https://i.ibb.co/m9bVptt/Screen-Shot-2020-02-06-at-1-18-42-PM.png)
 
 5) Write a Rails script to categorize the cafes and write the result to the category according to the rules:[provide the script]
     - If the Post Code is of the LS1 prefix type:
