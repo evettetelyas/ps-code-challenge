@@ -68,6 +68,7 @@ _I decided to create a test_data.csv with 10 rows of dummy data. This is importe
 		FROM street_cafes 
 		GROUP BY category;
 ```
+![category_data](https://i.ibb.co/WvyxRLc/Screen-Shot-2020-02-06-at-4-16-21-PM.png)
 
 7) Write a script in rails to:
     - For street_cafes categorized as small, write a script that exports their data to a csv and deletes the records
