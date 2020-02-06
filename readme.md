@@ -58,6 +58,16 @@ _I decided to create a test_data.csv with 10 rows of dummy data. This is importe
     - category: The category column
     - total_places: The number of places in that category
     - total_chairs: The total chairs in that category
+    
+    SQL Query:
+```
+    CREATE VIEW category_cafe_data AS
+SELECT category, 
+		COUNT(category) AS total_places, 
+		SUM(chairs) AS total_chairs 
+		FROM street_cafes 
+		GROUP BY category;
+```
 
 7) Write a script in rails to:
     - For street_cafes categorized as small, write a script that exports their data to a csv and deletes the records
