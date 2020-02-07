@@ -6,7 +6,7 @@
 
 2) Download the data file from: https://github.com/gospotcheck/ps-code-challenge/blob/master/Street%20Cafes%202015-16.csv
 
-_To complete this, I created a RakeTask that took all data present in the CSV and created a StreetCafe model that was inserted into the database. Today I Learned: Rails pluralizes cafe => caves, so I had to also redefine the correct inflection in config/initializers/inflections.rb_
+_To complete this, I created a RakeTask that took all data present in the CSV and created a StreetCafe model that was inserted into the database, this is done by running `rake import` off the CLI. Today I Learned: Rails pluralizes cafe => caves, so I had to also redefine the correct inflection in config/initializers/inflections.rb_
 
 3) Add a varchar column to the table called `category`. 
 
@@ -20,7 +20,7 @@ _I ran this off the CLI using `rails g migration add_category_to_street_cafe cat
     - place_with_max_chairs: The name of the place with the most chairs in that Post Code
     -max_chairs: The number of chairs at the place_with_max_chairs
 
-_Query used: (I had never used a self joins before but found that to be the easiest way to run a select name query through the S2 table while keeping the post_code as the constant between S1 and S2)_
+_Query used:_
 ```
 CREATE VIEW post_code_cafe_data AS
 SELECT post_code, 
@@ -52,7 +52,7 @@ _I decided to create a test_data.csv with 10 rows of dummy data. This is importe
 
     *Please share any tests you wrote for #5*
     
-    _My test file is included in `spec/tasks/assign_categories_spec.rb` I used RSpec to test this rake task._
+    _This command is run off the cli using the command `rake assign_categories`. My test file is included in `spec/tasks/assign_categories_spec.rb` I used RSpec to test this rake task._
 
 6) Write a custom view to aggregate the categories [provide view SQL AND the results of this view]
     - category: The category column
@@ -76,7 +76,7 @@ _I decided to create a test_data.csv with 10 rows of dummy data. This is importe
 	
     *Please share any tests you wrote for #7*
     
-    _My spec file is in `spec/tasks/create_small_cafe_csv_spec.rb`. I used RSpec to test this functionality._
+    _This command is run off the CLI using `rake reassign_cafes`. My spec file is in `spec/tasks/create_small_cafe_csv_spec.rb`. I used RSpec to test this functionality._
 
 8) Show your work and check your email for submission instructions.
 
