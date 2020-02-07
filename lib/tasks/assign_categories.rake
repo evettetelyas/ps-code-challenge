@@ -7,21 +7,21 @@ task :assign_categories => :environment do
 		if cafe.post_code.include? "LS1"
 			case cafe.chairs
 			when 0..10
-				cafe.update!(category: "ls1 small")
+				cafe.update(category: "ls1 small")
 			when 11..99
-				cafe.update!(category: "ls1 medium")
+				cafe.update(category: "ls1 medium")
 			when 100..Float::INFINITY
-				cafe.update!(category: "ls1 large")
+				cafe.update(category: "ls1 large")
 			end
 		elsif cafe.post_code.include? "LS2"
 			case cafe.chairs
 			when 0..(fifty_percentile_chairs-1)
-				cafe.update!(category: "ls2 small")
+				cafe.update(category: "ls2 small")
 			when fifty_percentile_chairs..Float::INFINITY
-				cafe.update!(category: "ls2 large")
+				cafe.update(category: "ls2 large")
 			end
 		else
-			cafe.update!(category: "other")
+			cafe.update(category: "other")
 		end
 		cafe.save
 	end
