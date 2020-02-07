@@ -3,7 +3,7 @@ require 'rake'
 PsCodeChallenge::Application.load_tasks
 
 RSpec.describe 'assign categories rake task' do
-	before :all do
+	before :each do
 		@ls1_cafe_sm = StreetCafe.create(name: "Evette's Cafe", 
 															address: "123 Cafe Street", 
 															post_code: "LS1 EVT", 
@@ -20,6 +20,14 @@ RSpec.describe 'assign categories rake task' do
 															address: "123 Pawsome Street", 
 															post_code: "LS2 LAR", 
 															chairs: 1)
+		@ls2_cafe_sm2 = StreetCafe.create(name: "Larry's Other Cafe", 
+															address: "123 Pug Street", 
+															post_code: "LS2 LAR", 
+															chairs: 2)
+		@ls2_cafe_sm3 = StreetCafe.create(name: "Larry's Newer Cafe", 
+															address: "123 Cutey Street", 
+															post_code: "LS2 LAR", 
+															chairs: 10)
 		@ls2_cafe_lg = StreetCafe.create(name: "Jason's Cafe", 
 															address: "123 Music Street", 
 															post_code: "LS2 JSF", 
@@ -39,5 +47,15 @@ RSpec.describe 'assign categories rake task' do
 		expect(@ls1_cafe_lg.category).to eq("ls1 large")
 		expect(@ls2_cafe_sm.category).to eq("ls2 small")
 		expect(@ls2_cafe_lg.category).to eq("ls2 large")
+	end
+
+	after :each do
+		StreetCafe.delete(@ls1_cafe_sm)
+		StreetCafe.delete(@ls1_cafe_md)
+		StreetCafe.delete(@ls1_cafe_lg)
+		StreetCafe.delete(@ls2_cafe_sm)
+		StreetCafe.delete(@ls2_cafe_sm2)
+		StreetCafe.delete(@ls2_cafe_sm3)
+		StreetCafe.delete(@ls2_cafe_lg)
 	end
 end
