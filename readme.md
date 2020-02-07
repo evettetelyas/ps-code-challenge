@@ -75,6 +75,8 @@ _I decided to create a test_data.csv with 10 rows of dummy data. This is importe
     - For street cafes categorized as medium or large, write a script that concatenates the category name to the beginning of the name and writes it back to the name column
 	
     *Please share any tests you wrote for #7*
+    
+    _My spec file is in `spec/tasks/create_small_cafe_csv_spec.rb`. I used RSpec to test this functionality._
 
 8) Show your work and check your email for submission instructions.
 
